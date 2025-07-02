@@ -43,7 +43,7 @@ export const Sidebar = ({
             {isExpanded ? (
               <>
                 <img
-                  src="/src/assets/icons/sl_logo.webp"
+                  src="/assets/icons/sl_logo.webp"
                   alt="Singularity Labs Logo"
                   className="w-10 h-10 rounded-full shrink-0"
                 />

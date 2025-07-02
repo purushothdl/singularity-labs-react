@@ -46,7 +46,7 @@ export const RegisterPage = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <img
-        src="src/assets/backgrounds/bg2.jpg"
+        src="/assets/backgrounds/bg2.jpg"
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -100,7 +100,7 @@ export const RegisterPage = () => {
           </div>
           <div className="hidden md:flex md:w-1/2 items-center justify-center mt-6 md:mt-0">
             <img
-              src="src/assets/images/jet_burn.png"
+              src="/assets/images/jet_burn.png"
               alt="Singularity Labs Nuclear Engine"
               className="rounded-2xl shadow-lg w-full h-full object-cover"
             />

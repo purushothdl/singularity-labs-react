@@ -78,7 +78,7 @@ export const Message = ({ msg }: { msg: AIMessage | ChatMessage }) => {
             {isAI ? (
                 <div className="flex items-center gap-2 sm:block">
                     <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center shrink-0 rounded-full text-sm font-semibold text-white">
-                        <img src="src/assets/icons/agent.png" alt="agent" className="w-full h-full object-cover rounded-full" />
+                        <img src="/assets/icons/agent.png" alt="agent" className="w-full h-full object-cover rounded-full" />
                     </div>
                     <p className="font-semibold text-white sm:hidden">Orion</p>
                 </div>

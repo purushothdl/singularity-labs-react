@@ -63,7 +63,7 @@ export const LoginPage = () => {
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-white">Welcome to Singularity Labs</h2>
             <img
-              src="src/assets/icons/login.png"
+              src="/assets/icons/login.png"
               alt="Login Icon"
               className="mx-auto mt-4 w-48 h-25"
             />
