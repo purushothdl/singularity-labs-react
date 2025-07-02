@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Input } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import { login as loginUser } from '../api/authService';
+import { useAuth } from '../context/AuthContext';
 
 type LoginFormInputs = {
   email: string;
@@ -17,18 +18,16 @@ export const LoginPage = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [generalApiError, setGeneralApiError] = useState<string | null>(null);
+  const { login } = useAuth();
 
-  const handleLoginSuccess = (token: string) => {
-    localStorage.setItem('authToken', token);
-    navigate('/success');
-  };
 
   const onSubmit = async (data: LoginFormInputs) => {
     setIsLoading(true);
     setGeneralApiError(null);
     try {
       const response = await loginUser(data.email, data.password);
-      handleLoginSuccess(response.access_token);
+      login(response.access_token); // Use the context login function
+      navigate('/chat'); // Navigate directly to chat
     } catch (error: any) {
       const errorDetail = error.response?.data?.detail;
       if (typeof errorDetail === 'object' && errorDetail !== null) {
