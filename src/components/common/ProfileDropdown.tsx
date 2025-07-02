@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FiUser, FiMail, FiClock } from 'react-icons/fi';
+import { FiUser, FiClock } from 'react-icons/fi';
 import type { UserPublic } from '../../types/api';
 import { useClickOutside } from '../../hooks/useClickOutside';
 import { capitalizeFirstLetter } from '../../utils/stringFormatters';
