@@ -1,3 +1,4 @@
+// context/AuthContext.tsx
 import React, { createContext, useState, useEffect, useContext, useMemo } from 'react';
 import { getMe } from '../api/authService';
 import type { UserPublic } from '../types/api';
@@ -8,8 +9,10 @@ interface AuthContextType {
   isLoading: boolean;
   login: (newToken: string) => void;
   logout: () => void;
+  updateUserContext: (newUser: UserPublic) => void; // <-- Add this line
 }
 
+// ... (AuthContext definition is the same)
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -18,6 +21,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // ... (This useEffect remains the same)
     const fetchUser = async () => {
       if (token) {
         try {
@@ -25,7 +29,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           setUser(userData);
         } catch (error) {
           console.error("Failed to fetch user, logging out.", error);
-          logout();
+          logout(); // Use the logout function here
         }
       }
       setIsLoading(false);
@@ -43,12 +47,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setToken(null);
     setUser(null);
   };
+
+  // --- NEW FUNCTION TO UPDATE USER STATE ---
+  const updateUserContext = (newUser: UserPublic) => {
+    setUser(newUser);
+  };
   
-  const value = useMemo(() => ({ user, token, isLoading, login, logout }), [user, token, isLoading]);
+  const value = useMemo(() => ({ user, token, isLoading, login, logout, updateUserContext }), [user, token, isLoading]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
+// ... (useAuth hook is the same)
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
