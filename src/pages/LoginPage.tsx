@@ -54,7 +54,7 @@ export const LoginPage = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <img
-        src="/assets/backgrounds/bg1.jpg"
+        src="/assets/backgrounds/sunset.jpg"
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover"
       />

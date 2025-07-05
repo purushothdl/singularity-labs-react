@@ -32,7 +32,7 @@ export const ChatInput = ({ onSend, isLoading }: ChatInputProps) => {
     }, [isLoading]);
 
     return (
-        <div className="p-4 bg-slate-900 border-t border-slate-700">
+        <div className="p-4 bg-slate-900">
             <div className="w-full max-w-3xl mx-auto bg-slate-800 rounded-xl p-1 flex items-end gap-2 border border-slate-600 focus-within:border-[#00d4ff] transition-all duration-300 ease-in-out">
                 <textarea
                     ref={textAreaRef}
