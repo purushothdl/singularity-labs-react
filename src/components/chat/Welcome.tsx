@@ -35,9 +35,9 @@ export const Welcome = ({ onSuggestionClick }: WelcomeProps) => {
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
       <div className="text-center mb-12">
         <img src="/assets/icons/agent.png" alt="Helion Agent" className="w-42 h-24 mx-auto mb-4" />
-        <h1 className="text-4xl sm:text-5xl font-bold text-white">Helion Scheduling Concierge</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold text-white">Orion Scheduling Concierge</h1>
         <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
-          I'm your AI-powered assistant for advanced collaboration scheduling.
+        I’m Orion, your AI assistant for coordinating mission-critical meetings with our nuclear propulsion and spaceflight teams.
         </p>
       </div>
 
