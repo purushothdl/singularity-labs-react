@@ -39,7 +39,7 @@ export const Sidebar = ({
     <>
       {/* Main container - ensure proper z-index and positioning */}
       <div
-        className={`absolute top-0 left-0 flex flex-col h-screen bg-[#000000] text-white transition-all duration-300 ease-in-out ${
+        className={`absolute top-0 left-0 flex flex-col h-screen bg-gradient-to-br from-slate-700 to-slate-900 text-white transition-all duration-300 ease-in-out rounded-r-2xl border-r border-slate-700 ${
           isExpanded ? 'w-64 p-4 z-30' : 'w-0 p-0 overflow-hidden md:w-20 md:p-4 md:overflow-visible z-10'
         }`}
       >
@@ -62,7 +62,7 @@ export const Sidebar = ({
                 />
                 {showText && (
                   <div className="ml-3 min-w-0 flex-1">
-                    <h1 className="text-xl font-bold whitespace-nowrap">Singularity Labs</h1>
+                    <h1 className="text-xl font-bold text-gray-200 whitespace-nowrap">Singularity Labs</h1>
                     <p className="text-xs text-gray-400 whitespace-nowrap">Client Portal</p>
                   </div>
                 )}
@@ -80,7 +80,7 @@ export const Sidebar = ({
           <nav className="flex flex-col space-y-2">
             <button
               onClick={onClearChat}
-              className={`flex items-center px-4 py-2 text-gray-300 rounded-md hover:bg-[#005AE0]/20 hover:text-white transition-colors ${
+              className={`flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-[#005AE0] hover:text-white transition-colors ${
                 !isExpanded ? 'md:justify-center' : ''
               }`}
             >
@@ -89,7 +89,7 @@ export const Sidebar = ({
             </button>
             <button
               onClick={onUpdateProfile}
-              className={`flex items-center px-4 py-2 text-gray-300 rounded-md hover:bg-[#005AE0]/20 hover:text-white transition-colors ${
+              className={`flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-[#005AE0] hover:text-white transition-colors ${
                 !isExpanded ? 'md:justify-center' : ''
               }`}
             >
@@ -102,7 +102,7 @@ export const Sidebar = ({
           <div className="mt-auto">
             <button
               onClick={onLogout}
-              className={`flex items-center w-full px-4 py-2 text-gray-300 rounded-md hover:bg-red-600/50 hover:text-white transition-colors ${
+              className={`flex items-center w-full px-4 py-2 text-gray-200 rounded-md hover:bg-[#E34234] hover:text-white transition-colors ${
                 !isExpanded ? 'md:justify-center' : ''
               }`}
             >
