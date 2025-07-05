@@ -53,6 +53,13 @@ export const RegisterPage = () => {
       <div className="relative z-10 flex items-center justify-center w-full h-full p-4">
         <div className="w-full max-w-4xl p-3 bg-black/50 rounded-3xl shadow-lg flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 p-8 md:mr-3 flex flex-col bg-[#111516] rounded-2xl">
+            <div className="flex items-center justify-center mb-6">
+              <img
+                src="/assets/icons/sl_logo.webp"
+                alt="Singularity Labs Logo"
+                className="w-24 h-24 rounded-full"
+              />
+            </div>
             <div className="text-center">
               <h2 className="text-3xl font-extrabold text-white">Join Singularity Labs</h2>
               <p className="mt-2 text-sm text-gray-300">
