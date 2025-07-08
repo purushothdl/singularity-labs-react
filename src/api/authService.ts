@@ -4,10 +4,10 @@ import type { UserCreate, TokenResponse, UserPublic, UserUpdate } from '../types
 /**
  * Sends a registration request to the backend.
  * @param data - The user's registration details (username, email, password).
- * @returns A promise that resolves to the newly created public user profile.
+ * @returns A promise that resolves to the token response (access_token and token_type).
  */
-export const register = async (data: UserCreate): Promise<UserPublic> => {
-  const response = await apiClient.post<UserPublic>('/auth/register', data);
+export const register = async (data: UserCreate): Promise<TokenResponse> => {
+  const response = await apiClient.post<TokenResponse>('/auth/register', data);
   return response.data;
 };
 

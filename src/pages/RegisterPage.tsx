@@ -5,6 +5,7 @@ import { Input } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import type { UserCreate } from '../types/api';
 import { register as registerUser } from '../api/authService';
+import { useAuth } from '../context/AuthContext';
 
 export const RegisterPage = () => {
   const { register, handleSubmit, formState: { errors }, setError } = useForm<UserCreate>({
@@ -13,13 +14,18 @@ export const RegisterPage = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [generalApiError, setGeneralApiError] = useState<string | null>(null);
+  const [registrationSuccess, setRegistrationSuccess] = useState<string | null>(null);
+  const { login } = useAuth();
 
   const onSubmit = async (data: UserCreate) => {
     setIsLoading(true);
     setGeneralApiError(null);
+    setRegistrationSuccess(null);
     try {
-      await registerUser(data);
-      navigate('/success');
+      const { access_token } = await registerUser(data);
+      login(access_token);
+      setRegistrationSuccess('Registration successful! Redirecting to chat...');
+      setTimeout(() => navigate('/chat'), 1500);
     } catch (error: any) {
       const errorDetail = error.response?.data?.detail;
       if (typeof errorDetail === 'object' && errorDetail !== null) {
@@ -94,6 +100,7 @@ export const RegisterPage = () => {
               />
               {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
               {generalApiError && <p className="text-red-500 text-center text-sm">{generalApiError}</p>}
+              {registrationSuccess && <p className="text-green-500 text-center text-sm">{registrationSuccess}</p>}
               <Button type="submit" isLoading={isLoading}>
                 {isLoading ? 'Launching Your Account...' : 'Launch Account'}
               </Button>
