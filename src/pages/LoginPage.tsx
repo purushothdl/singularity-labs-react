@@ -102,6 +102,9 @@ export const LoginPage = () => {
               Register here
             </Link>
           </p>
+          <p className="mt-2 text-xs text-gray-400 text-center">
+            Demo: <span className="text-gray-300">Email: test@gmail.com</span> | <span className="text-gray-300">Password: testing12</span>
+          </p>
         </div>
       </div>
     </div>
