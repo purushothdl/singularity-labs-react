@@ -82,7 +82,7 @@ A glimpse of the end-to-end user journey:
 
 ```bash
 git clone https://github.com/purushothdl/singularity-scheduler-frontend.git
-cd singularity-labs-react
+cd singularity-scheduler-frontend
 ```
 
 ### 2️⃣ Install dependencies
@@ -177,5 +177,3 @@ This frontend communicates with a robust **FastAPI backend**:
 
 ---
 
-🚀 **Happy Coding!**  
-Let me know if you'd like to add or modify anything else!
